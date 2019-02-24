@@ -33,7 +33,20 @@ class VendingMachine {
       transaction.name = item;
       transaction.quantity = quantity -= 1;
     }
+    else{
+      transaction.change = payment;
+      transaction.name = item;
+      transaction.quantity = quantity
+    }
     return transaction;
+  }
+
+  displayInsufficient(product, payment) {
+    let price = this.data.selections[product].price;
+
+    if (payment < price) {
+      throw "Insufficient Payment. Plese input more money or cancel transaction";
+    }
   }
 }
 

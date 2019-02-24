@@ -22,15 +22,22 @@ describe("State of Vending Machine", () => {
   });
 
   describe("Payment", () => {
+    it("should return change and quantity remains static as payment is less than price", () => {
+      expect(MachineConstructor.getTransaction("A2", 2.0)).toEqual({
+        name: "Sugarpova",
+        change: 2.0,
+        quantity: 5
+      });
+    });
     it("should dispense item and update quantity as payment is equal to price", () => {
       expect(MachineConstructor.getTransaction("A1", 3.0)).toEqual({
         name: "Honey Butter Chips",
-        change: 0,
+        change: 0.0,
         quantity: 9
       });
     });
     it("should dispense item and update quantity as payment is larger than price", () => {
-      expect(MachineConstructor.getTransaction("B2", 7.00)).toEqual({
+      expect(MachineConstructor.getTransaction("B2", 7.0)).toEqual({
         name: "Hersheys",
         change: 2.0,
         quantity: 19
