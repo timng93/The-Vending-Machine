@@ -49,6 +49,9 @@ class VendingMachine {
       }, [])
       .join(", ");
   }
+  // getChange() {
+
+  // }
 }
 
 module.exports = VendingMachine;

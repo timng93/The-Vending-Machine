@@ -27,6 +27,8 @@ describe("State of Vending Machine", () => {
         "10 Honey Butter Chips, 5 Sugarpova, 15 Nerds, 20 Hersheys"
       );
     });
+
+
   });
 
   describe("Payment", () => {
@@ -51,9 +53,14 @@ describe("State of Vending Machine", () => {
         quantity: 19
       });
     });
-    // test('Vending machine undefined inventory', () => {
-    //   vendingMachine.inventory = undefined;
-    //   expect(() => vendingMachine.getInventory()).toThrow('Empty inventory');
-    // });
   });
+
+//   describe("Coins Return", () => {
+//     it("should return change as payment is larger than price")
+//     expect(MachineConstructor.getChange("A2", 5.0)).toEqual({
+//     change: 1.5,
+//     toonies: 1,
+//     quarters: 2
+//     })
+// })
 });
