@@ -40,6 +40,13 @@ describe("State of Vending Machine", () => {
     });
   });
 
+  describe("Refill Coins", () => {
+    it("should refill all coins types", () => {
+      expect(MachineConstructor.refillCoins()).toBe(75);
+    });
+  });
+
+
 
   describe("Payment", () => {
     it("should return change and quantity remains static as payment is less than price", () => {

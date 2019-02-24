@@ -28,28 +28,23 @@
   "coins": {
     "nickels": {
       "value": 0.05,
-      "count": 50,
-      "maxQuantity": 60
+      "count": 15
     },
     "dimes": {
       "value": 0.1,
-      "count": 50,
-      "maxQuantity": 60
+      "count": 15
     },
     "quarters": {
       "value": 0.25,
-      "count": 50,
-      "maxQuantity": 60
+      "count": 15
     },
     "loonies": {
       "value": 1.0,
-      "count": 50,
-      "maxQuantity": 60
+      "count": 15
     },
     "toonies": {
       "value": 2.0,
-      "count": 50,
-      "maxQuantity": 60
+      "count": 15
     }
   }
 }

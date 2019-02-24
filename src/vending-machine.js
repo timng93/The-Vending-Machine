@@ -3,7 +3,6 @@ class VendingMachine {
     this.data = require(json);
   }
 
- 
   getProductCount(product) {
     return {
       name: this.data.selections[product].name,
@@ -63,7 +62,18 @@ class VendingMachine {
     return restock;
   }
 
-  
+  refillCoins() {
+    const coins = Object.entries(this.data.coins);
+    let refill = 0;
+    coins.map(coinType => {
+      if (coinType[1].count < 15) {
+        coinType[1].count = 15;
+      }
+      refill += coinType[1].count;
+    });
+    return refill;
+  }
+
   // getChange() {
 
   // }
