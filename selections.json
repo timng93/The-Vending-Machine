@@ -1,0 +1,59 @@
+{
+  "selections": {
+    "Honey Butter Chips": {
+      "name": "Honey Butter Chips",
+      "id": "1",
+      "slot": "1",
+      "price": 3.0,
+      "quantity": 10
+    },
+    "Sugarpova": {
+      "name": "Sugarpova",
+      "id": "2",
+      "slot": "2",
+      "price": 3.5,
+      "quantity": 5
+    },
+    "Nerds": {
+      "name": "Nerds",
+      "id": "3",
+      "slot": "3",
+      "price": 4.5,
+      "quantity": 15
+    },
+    "Hersheys": {
+      "name": "Hersheys",
+      "id": "4",
+      "slot": "4",
+      "price": 5.0,
+      "quantity": 20
+    }
+  },
+  "coins": {
+    "nickels": {
+      "value": 0.05,
+      "count": 50,
+      "maxQuantity": 60
+    },
+    "dimes": {
+      "value": 0.10,
+      "count": 50,
+      "maxQuantity": 60
+    },
+    "quarterw": {
+      "value": 0.25,
+      "count": 50,
+      "maxQuantity": 60
+    },
+    "loonies": {
+      "value": 1.00,
+      "count": 50,
+      "maxQuantity": 60
+    },
+    "toonies": {
+      "value": 2.00,
+      "count": 50,
+      "maxQuantity": 60
+    }
+  }
+}
