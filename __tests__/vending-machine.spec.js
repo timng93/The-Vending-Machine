@@ -6,34 +6,35 @@ describe("State of Vending Machine", () => {
     MachineConstructor = new VendingMachine("../selections.json");
   });
 
-
-describe("Products Properties", () => {
-  it("Machine to return name and quantity of selected items", () => {
-    expect(MachineConstructor.getProductCount("Honey Butter Chips")).toEqual({
-      name: "Honey Butter Chips",
-      quantity: 10
+  describe("Products Properties", () => {
+    it("should return name and quantity as user picks a slot", () => {
+      expect(MachineConstructor.getProductCount("A1")).toEqual({
+        name: "Honey Butter Chips",
+        quantity: 10
+      });
+    });
+    it("should return name and price as user picks a slot", () => {
+      expect(MachineConstructor.getProductPrice("B1")).toEqual({
+        name: "Nerds",
+        price: 4.5
+      });
     });
   });
-  it("Machine to return name and price of selected items", () => {
-    expect(MachineConstructor.getProductPrice("Honey Butter Chips")).toEqual({
-      name: "Honey Butter Chips",
-      price: 3.0
-  })
-});
-});
 
-describe("Payment", () => {
-  it("should return item as payment is equal to price", () => {
-    expect(MachineConstructor.getPayment("Honey Butter Chips", 3.00)).toEqual({
-      name: "Honey Butter Chips", change: 0, quantity: 9
-    })
-  })
-  it("should return change as payment is more than price", () => {
-  expect(MachineConstructor.getPayment("Honey Butter Chips", 4.00)).toEqual({
-    name: "Honey Butter Chips", change: 1.0, quantity: 9
-  })
+  describe("Payment", () => {
+    it("should dispense item and update quantity as payment is equal to price", () => {
+      expect(MachineConstructor.getTransaction("A1", 3.0)).toEqual({
+        name: "Honey Butter Chips",
+        change: 0,
+        quantity: 9
+      });
+    });
+    it("should dispense item and update quantity as payment is larger than price", () => {
+      expect(MachineConstructor.getTransaction("B2", 7.00)).toEqual({
+        name: "Hersheys",
+        change: 2.0,
+        quantity: 19
+      });
+    });
+  });
 });
-})
-
-});
-

@@ -17,24 +17,24 @@ class VendingMachine {
     };
   }
 
-  getPayment(product, payment) {
-    let selectedItem = this.data.selections[product].name;
-    let selectedItemPrice = this.data.selections[product].price;
-    let selectedItemQuantity = this.data.selections[product].quantity;
+  getTransaction(product, payment) {
+    let item = this.data.selections[product].name;
+    let price = this.data.selections[product].price;
+    let quantity = this.data.selections[product].quantity;
 
-    let transaction={
-        name : "",
-        change : "",
-        quantity : ""
-    }
+    let transaction = {
+      name: "",
+      change: "",
+      quantity: ""
+    };
 
-    if(payment === selectedItemPrice || payment > selectedItemPrice) {
-      transaction.change = payment - selectedItemPrice;
-      transaction.name = selectedItem;
-      transaction.quantity = selectedItemQuantity -= 1;
+    if (payment === price || payment > price) {
+      transaction.change = payment - price;
+      transaction.name = item;
+      transaction.quantity = quantity -= 1;
     }
-    return transaction 
+    return transaction;
   }
-};
+}
 
 module.exports = VendingMachine;
