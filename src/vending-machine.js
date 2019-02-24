@@ -32,21 +32,22 @@ class VendingMachine {
       transaction.change = payment - price;
       transaction.name = item;
       transaction.quantity = quantity -= 1;
-    }
-    else{
+    } else {
       transaction.change = payment;
       transaction.name = item;
-      transaction.quantity = quantity
+      transaction.quantity = quantity;
     }
     return transaction;
   }
 
-  displayInsufficient(product, payment) {
-    let price = this.data.selections[product].price;
-
-    if (payment < price) {
-      throw "Insufficient Payment. Plese input more money or cancel transaction";
-    }
+  printInventory() {
+    const inventory = Object.entries(this.data.selections);
+    return inventory
+      .reduce((accumulator, selection) => {
+        accumulator.push(`${selection[1].quantity} ${selection[1].name}`);
+        return accumulator;
+      }, [])
+      .join(", ");
   }
 }
 

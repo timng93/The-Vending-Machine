@@ -21,6 +21,14 @@ describe("State of Vending Machine", () => {
     });
   });
 
+  describe("Products Inventory", () => {
+    it("should return products' name and amounts in inventory", () => {
+      expect(MachineConstructor.printInventory()).toEqual(
+        "10 Honey Butter Chips, 5 Sugarpova, 15 Nerds, 20 Hersheys"
+      );
+    });
+  });
+
   describe("Payment", () => {
     it("should return change and quantity remains static as payment is less than price", () => {
       expect(MachineConstructor.getTransaction("A2", 2.0)).toEqual({
@@ -43,5 +51,9 @@ describe("State of Vending Machine", () => {
         quantity: 19
       });
     });
+    // test('Vending machine undefined inventory', () => {
+    //   vendingMachine.inventory = undefined;
+    //   expect(() => vendingMachine.getInventory()).toThrow('Empty inventory');
+    // });
   });
 });
