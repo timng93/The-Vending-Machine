@@ -18,7 +18,7 @@ describe("State of Vending Machine", () => {
         quantity: 15
       });
     });
-    it("should return name and price as user picks a slot", () => {
+    it("should return name and price as user picks a valid slot", () => {
       expect(MachineConstructor.getProductPrice("B1")).toEqual({
         name: "Nerds",
         price: 4.5
@@ -46,9 +46,12 @@ describe("State of Vending Machine", () => {
     });
   });
 
-
-
   describe("Payment", () => {
+    it("should return error as payment exceeds 10 dollars", () => {
+      expect(MachineConstructor.invalidPayment(15)).toEqual(
+        "Payment exceeds 10 dollars. Please try again with smaller bills"
+      );
+    });
     it("should return change and quantity remains static as payment is less than price", () => {
       expect(MachineConstructor.getTransaction("A2", 2.0)).toEqual({
         name: "Sugarpova",

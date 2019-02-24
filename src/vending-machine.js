@@ -74,6 +74,12 @@ class VendingMachine {
     return refill;
   }
 
+  invalidPayment(payment) {
+    if (payment > 10) {
+      return "Payment exceeds 10 dollars. Please try again with smaller bills";
+    }
+  }
+
   // getChange() {
 
   // }
