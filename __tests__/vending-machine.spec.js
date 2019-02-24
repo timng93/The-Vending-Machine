@@ -7,11 +7,6 @@ describe("State of Vending Machine", () => {
   });
 
   describe("Products Properties", () => {
-    // it("should return name and quantity as user picks an invalid slot", () => {
-    //   expect(MachineConstructor.getProductCount("A3")).toThrow(
-    //     "No such products exist"
-    //   );
-    // });
     it("should return name and quantity as user picks a valid slot", () => {
       expect(MachineConstructor.getProductCount("A1")).toEqual({
         name: "Honey Butter Chips",
@@ -32,11 +27,24 @@ describe("State of Vending Machine", () => {
         "15 Honey Butter Chips, 15 Sugarpova, 15 Nerds, 15 Hersheys"
       );
     });
+    it("should return error as inventory for a particular product is empty", () => {
+      expect(MachineConstructor.emptyInventory("A1")).toEqual(
+        "No more products. Please make a different selection"
+      );
+    });
   });
 
   describe("Refill Inventory", () => {
     it("should restock all products in Inventory", () => {
       expect(MachineConstructor.restockInventory()).toBe(60);
+    });
+  });
+
+  describe("Current Coins Inventory", () => {
+    it("should return products' name and amounts in inventory", () => {
+      expect(MachineConstructor.printCoinsInventory()).toEqual(
+        "15 Nickles, 15 Dimes, 15 Quarters, 15 Loonies, 15 Toonies"
+      );
     });
   });
 
@@ -75,12 +83,9 @@ describe("State of Vending Machine", () => {
     });
   });
 
-  //   describe("Coins Return", () => {
-  //     it("should return change as payment is larger than price")
-  //     expect(MachineConstructor.getChange("A2", 5.0)).toEqual({
-  //     change: 1.5,
-  //     toonies: 1,
-  //     quarters: 2
-  //     })
-  // })
+  describe("Coins Return", () => {
+    it("return coins for changes as user picks a valid slot", () => {
+      expect(MachineConstructor.getChange("A2", 5.0)).toBe(" nickles: 30");
+    });
+  });
 });

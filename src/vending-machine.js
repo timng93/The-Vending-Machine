@@ -43,8 +43,8 @@ class VendingMachine {
   printInventory() {
     const inventory = Object.entries(this.data.selections);
     return inventory
-      .reduce((accumulator, selection) => {
-        accumulator.push(`${selection[1].quantity} ${selection[1].name}`);
+      .reduce((accumulator, product) => {
+        accumulator.push(`${product[1].quantity} ${product[1].name}`);
         return accumulator;
       }, [])
       .join(", ");
@@ -53,13 +53,23 @@ class VendingMachine {
   restockInventory() {
     const inventory = Object.entries(this.data.selections);
     let restock = 0;
-    inventory.map(selection => {
-      if (selection[1].quantity < 15) {
-        selection[1].quantity = 15;
+    inventory.map(product => {
+      if (product[1].quantity < 15) {
+        product[1].quantity = 15;
       }
-      restock += selection[1].quantity;
+      restock += product[1].quantity;
     });
     return restock;
+  }
+
+  printCoinsInventory() {
+    const coinsInventory = Object.entries(this.data.coins);
+    return coinsInventory
+      .reduce((accumulator, coinType) => {
+        accumulator.push(`${coinType[1].count} ${coinType[1].name}`);
+        return accumulator;
+      }, [])
+      .join(", ");
   }
 
   refillCoins() {
@@ -80,9 +90,48 @@ class VendingMachine {
     }
   }
 
-  // getChange() {
+  emptyInventory(product) {
+    let name = this.data.selections[product].name;
+    let quantity = this.data.selections[product].quantity;
 
-  // }
+    let inventory = {
+      name: "",
+      quantity: ""
+    };
+
+    inventory.name = name;
+    inventory.quantity = quantity - quantity;
+
+    if (inventory.quantity === 0) {
+      return "No more products. Please make a different selection";
+    }
+  }
+
+  getChange(product, payment) {
+    let price = this.data.selections[product].price;
+    let balance = payment - price;
+    let changes = {};
+   
+    Object.entries(this.data.coins).forEach(([key, value]) => {
+      let amountNeeded = Math.floor(balance / value.value);
+      if (value.count !== 0) {
+        value.count -= amountNeeded;
+        balance -= amountNeeded * value.value;
+        if (amountNeeded) {
+          changes = Object.assign(changes, {
+            [key]: amountNeeded
+          });
+        }
+      }
+    });
+
+    let changesAmount = Object.entries(changes);
+    let coinChanges = [];
+    changesAmount.map((coin) => {
+      coinChanges.push(coin.join(": "));
+    });
+    return ` ${coinChanges.join(" ")}`;
+  }
 }
 
 module.exports = VendingMachine;

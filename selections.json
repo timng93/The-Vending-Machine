@@ -16,33 +16,36 @@
       "id": "3",
       "name": "Nerds",
       "price": 4.5,
-      "quantity": 15
-    },
+      "quantity": 15    },
     "B2": {
       "name": "Hersheys",
       "id": "4",
       "price": 5.0,
-      "quantity": 15
-    }
+      "quantity": 15    }
   },
   "coins": {
-    "nickels": {
+    "nickles": {
+      "name": "Nickles",
       "value": 0.05,
       "count": 15
     },
     "dimes": {
+      "name": "Dimes",
       "value": 0.1,
       "count": 15
     },
     "quarters": {
+      "name": "Quarters",
       "value": 0.25,
       "count": 15
     },
     "loonies": {
+      "name": "Loonies",
       "value": 1.0,
       "count": 15
     },
     "toonies": {
+      "name": "Toonies",
       "value": 2.0,
       "count": 15
     }
