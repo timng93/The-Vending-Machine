@@ -3,6 +3,7 @@ class VendingMachine {
     this.data = require(json);
   }
 
+ 
   getProductCount(product) {
     return {
       name: this.data.selections[product].name,
@@ -49,6 +50,20 @@ class VendingMachine {
       }, [])
       .join(", ");
   }
+
+  restockInventory() {
+    const inventory = Object.entries(this.data.selections);
+    let restock = 0;
+    inventory.map(selection => {
+      if (selection[1].quantity < 15) {
+        selection[1].quantity = 15;
+      }
+      restock += selection[1].quantity;
+    });
+    return restock;
+  }
+
+  
   // getChange() {
 
   // }

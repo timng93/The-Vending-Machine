@@ -4,13 +4,13 @@
       "id": "1",
       "name": "Honey Butter Chips",
       "price": 3.0,
-      "quantity": 10
+      "quantity": 15
     },
     "A2": {
       "id": "2",
       "name": "Sugarpova",
       "price": 3.5,
-      "quantity": 5
+      "quantity": 15
     },
     "B1": {
       "id": "3",
@@ -22,7 +22,7 @@
       "name": "Hersheys",
       "id": "4",
       "price": 5.0,
-      "quantity": 20
+      "quantity": 15
     }
   },
   "coins": {
