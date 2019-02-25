@@ -1,12 +1,12 @@
 const VendingMachine = require("../src/vending-machine.js");
 
-describe("State of Vending Machine", () => {
+describe("The Vending Machine", () => {
   let MachineConstructor;
   beforeEach(() => {
     MachineConstructor = new VendingMachine("../selections.json");
   });
 
-  describe("Products Properties", () => {
+  describe("Select Products", () => {
     it("should return name and quantity as user picks a valid slot", () => {
       expect(MachineConstructor.getProductCount("A1")).toEqual({
         name: "Honey Butter Chips",
@@ -22,7 +22,7 @@ describe("State of Vending Machine", () => {
   });
 
   describe("Current Inventory", () => {
-    it("should return products' name and amounts in inventory", () => {
+    it("should return products' names and amounts in inventory", () => {
       expect(MachineConstructor.printInventory()).toEqual(
         "15 Honey Butter Chips, 15 Sugarpova, 15 Nerds, 15 Hersheys"
       );
@@ -41,7 +41,7 @@ describe("State of Vending Machine", () => {
   });
 
   describe("Current Coins Inventory", () => {
-    it("should return products' name and amounts in inventory", () => {
+    it("should return coins' names and amounts in inventory", () => {
       expect(MachineConstructor.printCoinsInventory()).toEqual(
         "15 Nickles, 15 Dimes, 15 Quarters, 15 Loonies, 15 Toonies"
       );
@@ -85,7 +85,7 @@ describe("State of Vending Machine", () => {
 
   describe("Coins Return", () => {
     it("return coins for changes as user picks a valid slot", () => {
-      expect(MachineConstructor.getChange("A2", 5.0)).toBe(" nickles: 30");
+      expect(MachineConstructor.getChange("A2", 5.0)).toEqual(" nickles: 30");
     });
   });
 });

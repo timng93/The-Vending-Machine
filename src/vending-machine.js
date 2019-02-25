@@ -111,7 +111,7 @@ class VendingMachine {
     let price = this.data.selections[product].price;
     let balance = payment - price;
     let changes = {};
-   
+
     Object.entries(this.data.coins).forEach(([key, value]) => {
       let amountNeeded = Math.floor(balance / value.value);
       if (value.count !== 0) {
@@ -127,7 +127,7 @@ class VendingMachine {
 
     let changesAmount = Object.entries(changes);
     let coinChanges = [];
-    changesAmount.map((coin) => {
+    changesAmount.map(coin => {
       coinChanges.push(coin.join(": "));
     });
     return ` ${coinChanges.join(" ")}`;
