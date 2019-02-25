@@ -10,7 +10,7 @@ describe("The Vending Machine", () => {
     it("should return name and quantity as user picks a valid slot", () => {
       expect(MachineConstructor.getProductCount("A1")).toEqual({
         name: "Honey Butter Chips",
-        quantity: 15
+        quantity: 10
       });
     });
     it("should return name and price as user picks a valid slot", () => {
@@ -24,7 +24,7 @@ describe("The Vending Machine", () => {
   describe("Current Inventory", () => {
     it("should return products' names and amounts in inventory", () => {
       expect(MachineConstructor.printInventory()).toEqual(
-        "15 Honey Butter Chips, 15 Sugarpova, 15 Nerds, 15 Hersheys"
+        "10 Honey Butter Chips, 12 Sugarpova, 11 Nerds, 8 Hersheys"
       );
     });
     it("should return error as inventory for a particular product is empty", () => {
@@ -35,7 +35,7 @@ describe("The Vending Machine", () => {
   });
 
   describe("Refill Inventory", () => {
-    it("should restock all products in Inventory", () => {
+    it("should restock 15 for each product in machine", () => {
       expect(MachineConstructor.restockInventory()).toBe(60);
     });
   });
@@ -43,14 +43,14 @@ describe("The Vending Machine", () => {
   describe("Current Coins Inventory", () => {
     it("should return coins' names and amounts in inventory", () => {
       expect(MachineConstructor.printCoinsInventory()).toEqual(
-        "15 Nickles, 15 Dimes, 15 Quarters, 15 Loonies, 15 Toonies"
+        "30 Nickles, 20 Dimes, 25 Quarters, 34 Loonies, 12 Toonies"
       );
     });
   });
 
   describe("Refill Coins", () => {
-    it("should refill all coins types", () => {
-      expect(MachineConstructor.refillCoins()).toBe(75);
+    it("should refill 50 coins for each coin type", () => {
+      expect(MachineConstructor.refillCoins()).toBe(250);
     });
   });
 

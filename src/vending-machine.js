@@ -76,8 +76,8 @@ class VendingMachine {
     const coins = Object.entries(this.data.coins);
     let refill = 0;
     coins.map(coinType => {
-      if (coinType[1].count < 15) {
-        coinType[1].count = 15;
+      if (coinType[1].count < 50) {
+        coinType[1].count = 50;
       }
       refill += coinType[1].count;
     });

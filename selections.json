@@ -4,50 +4,50 @@
       "id": "1",
       "name": "Honey Butter Chips",
       "price": 3.0,
-      "quantity": 15
+      "quantity": 10
     },
     "A2": {
       "id": "2",
       "name": "Sugarpova",
       "price": 3.5,
-      "quantity": 15
+      "quantity": 12
     },
     "B1": {
       "id": "3",
       "name": "Nerds",
       "price": 4.5,
-      "quantity": 15    },
+      "quantity": 11    },
     "B2": {
       "name": "Hersheys",
       "id": "4",
       "price": 5.0,
-      "quantity": 15    }
+      "quantity": 8    }
   },
   "coins": {
     "nickles": {
       "name": "Nickles",
       "value": 0.05,
-      "count": 15
+      "count": 30
     },
     "dimes": {
       "name": "Dimes",
       "value": 0.1,
-      "count": 15
+      "count": 20
     },
     "quarters": {
       "name": "Quarters",
       "value": 0.25,
-      "count": 15
+      "count": 25
     },
     "loonies": {
       "name": "Loonies",
       "value": 1.0,
-      "count": 15
+      "count": 34
     },
     "toonies": {
       "name": "Toonies",
       "value": 2.0,
-      "count": 15
+      "count": 12
     }
   }
 }

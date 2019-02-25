@@ -1,6 +1,6 @@
 # Vending Machine
 
-Vending Machine is a UI-less Javascript Application that describe and test for vending machine functionalities. The machine stores a variety of products, dispenses items and return coins depend on user input.
+Simple vending machine built using Javascript. The machine stores a variety of products, dispenses items and return coins depend on user input.
 
 ## Authors
 
@@ -16,6 +16,11 @@ Tim Nguyen | https://github.com/timng93
 
 - Jest Library
 
+- Javascript
+
+
 ## Installation Instructions
+
+`npm install`
 
 `npm test`
