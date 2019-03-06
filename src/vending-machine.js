@@ -1,6 +1,8 @@
+const data = require("../selections.json");
+
 class VendingMachine {
-  constructor(json) {
-    this.data = require(json);
+  constructor() {
+    this.data = data;
   }
 
   getProductCount(product) {
@@ -130,7 +132,7 @@ class VendingMachine {
     changesAmount.map(coin => {
       coinChanges.push(coin.join(": "));
     });
-    return ` ${coinChanges.join(" ")}`;
+    return ` ${coinChanges.join(", ")}`;
   }
 }
 

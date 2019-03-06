@@ -3,7 +3,7 @@ const VendingMachine = require("../src/vending-machine.js");
 describe("The Vending Machine", () => {
   let MachineConstructor;
   beforeEach(() => {
-    MachineConstructor = new VendingMachine("../selections.json");
+    MachineConstructor = new VendingMachine();
   });
 
   describe("Select Products", () => {
@@ -43,7 +43,7 @@ describe("The Vending Machine", () => {
   describe("Current Coins Inventory", () => {
     it("should return coins' names and amounts in inventory", () => {
       expect(MachineConstructor.printCoinsInventory()).toEqual(
-        "30 Nickles, 20 Dimes, 25 Quarters, 34 Loonies, 12 Toonies"
+        "12 Toonies, 34 Loonies, 25 Quarters, 20 Dimes, 30 Nickles"
       );
     });
   });
@@ -85,7 +85,9 @@ describe("The Vending Machine", () => {
 
   describe("Coins Return", () => {
     it("return coins for changes as user picks a valid slot", () => {
-      expect(MachineConstructor.getChange("A2", 5.0)).toEqual(" nickles: 30");
+      expect(MachineConstructor.getChange("A2", 5.0)).toEqual(
+        " loonies: 1, quarters: 2"
+      );
     });
   });
 });
